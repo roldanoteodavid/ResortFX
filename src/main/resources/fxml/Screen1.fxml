@@ -10,7 +10,7 @@
         <StackPane prefHeight="150.0" prefWidth="200.0">
             <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
                 <children>
-                    <MFXPasswordField layoutX="274.0" layoutY="71.0" promptText="ntroduce password" />
+                    <MFXPasswordField layoutX="274.0" layoutY="71.0" promptText="Introduce password" />
                     <MFXButton layoutX="289.0" layoutY="157.0" mnemonicParsing="false" text="Aceptar" onAction="#Aceptar" />
                     <ImageView fitHeight="161.0" fitWidth="187.0" layoutX="263.0" layoutY="237.0" pickOnBounds="true" preserveRatio="true">
                         <image>
@@ -26,7 +26,7 @@
         <MenuBar fx:id="menuPrincipal">
             <Menu mnemonicParsing="false" text="OpcionesMenu">
                 <MenuItem fx:id="pantallaPrimera" mnemonicParsing="false" onAction="#menuClick" text="PantallaPrincipal"/>
-                <MenuItem fx:id="pantallaSegunda" mnemonicParsing="false" onAction="#menuClick" text="Clientes"/>
+                <MenuItem fx:id="pantallaSegunda" mnemonicParsing="false" onAction="#menuClick" text="Actividades"/>
                 <MenuItem fx:id="pantallaTercera" mnemonicParsing="false" onAction="#menuClick" text="Salir" />
             </Menu>
         </MenuBar>

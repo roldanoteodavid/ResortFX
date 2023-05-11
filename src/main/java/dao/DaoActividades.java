@@ -1,9 +1,7 @@
 package dao;
 
 import domain.modelo.Actividad;
-import domain.modelo.Animal;
 
-import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 

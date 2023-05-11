@@ -2,12 +2,9 @@ package ui;
 
 import dao.DaoActividades;
 import domain.modelo.Actividad;
+import io.github.palexdev.materialfx.controls.*;
 import javafx.scene.control.*;
 import javafx.scene.input.MouseEvent;
-import io.github.palexdev.materialfx.controls.MFXButton;
-import io.github.palexdev.materialfx.controls.MFXComboBox;
-import io.github.palexdev.materialfx.controls.MFXTextField;
-import io.github.palexdev.materialfx.controls.MFXToggleButton;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.cell.PropertyValueFactory;
@@ -16,6 +13,7 @@ import javafx.scene.paint.Color;
 import servicios.ServicioActividades;
 
 import java.net.URL;
+import java.time.LocalDate;
 import java.util.Locale;
 import java.util.Optional;
 import java.util.ResourceBundle;
@@ -44,7 +42,7 @@ public class SegundaPantallaClientesController implements Initializable {
     @FXML
     private TableColumn<Actividad, String> columna5;
     @FXML
-    private MFXComboBox<String> comboBox;
+    private MFXDatePicker fecha;
     @FXML
     private MFXTextField nombre;
     @FXML
@@ -53,8 +51,6 @@ public class SegundaPantallaClientesController implements Initializable {
     private MFXTextField id;
     @FXML
     private MFXTextField precio;
-    @FXML
-    private MFXTextField fecha;
     @FXML
     private Label label;
     @FXML
@@ -76,7 +72,7 @@ public class SegundaPantallaClientesController implements Initializable {
         columna2.setCellValueFactory(new PropertyValueFactory<>("nombre"));
         columna3.setCellValueFactory(new PropertyValueFactory<>("lugar"));
         columna4.setCellValueFactory(new PropertyValueFactory<>("precio"));
-        columna4.setCellValueFactory(new PropertyValueFactory<>("fecha"));
+        columna5.setCellValueFactory(new PropertyValueFactory<>("fecha"));
         //comboBox.getItems().addAll(resourceBundle.getString("combo1"), resourceBundle.getString("combo2"), resourceBundle.getString("combo3"), resourceBundle.getString("combo4"));
         //si queremos que al seleccionar un elemento de la tabla se rellenen los textField hay que añadir un listener a la tabla para que
         //ejecute el método onEdit cada vez que ocurra..
@@ -101,15 +97,16 @@ public class SegundaPantallaClientesController implements Initializable {
     private void cambioIdioma() {
         ResourceBundle bundle;
         if (toggleidioma.isSelected()) {
-            bundle = ResourceBundle.getBundle("textosFX", Locale.ENGLISH);
+            bundle = ResourceBundle.getBundle("textosFX", new Locale("pt"));
         } else {
             bundle = ResourceBundle.getBundle("textosFX", Locale.getDefault());
         }
         label.setText(bundle.getString("titulo"));
         columna1.setText(bundle.getString("columnaId"));
         columna2.setText(bundle.getString("columnaNombre"));
-        columna3.setText(bundle.getString("columnaEdad"));
-        columna4.setText(bundle.getString("columnaRaza"));
+        columna3.setText(bundle.getString("columnaLugar"));
+        columna4.setText(bundle.getString("columnaPrecio"));
+        columna5.setText(bundle.getString("columnaFecha"));
         botonAdd.setText(bundle.getString("botonAdd"));
         botonDelete.setText(bundle.getString("botonDelete"));
         botonUpdate.setText(bundle.getString("botonUpdate"));
@@ -121,8 +118,8 @@ public class SegundaPantallaClientesController implements Initializable {
         //comboBox.setPromptText(bundle.getString("columnaRaza"));
         toggleidioma.setText(bundle.getString("idioma"));
         modooscuro.setText(bundle.getString("modooscuro"));
-        comboBox.getItems().clear();
-        comboBox.getItems().addAll(bundle.getString("combo1"), bundle.getString("combo2"), bundle.getString("combo3"), bundle.getString("combo4"));
+        //comboBox.getItems().clear();
+        //comboBox.getItems().addAll(bundle.getString("combo1"), bundle.getString("combo2"), bundle.getString("combo3"), bundle.getString("combo4"));
     }
 
     @FXML
@@ -150,10 +147,10 @@ public class SegundaPantallaClientesController implements Initializable {
 
     @FXML
     private void addActividad() {
-        if (id.getText().isEmpty() || nombre.getText().isEmpty() || edad.getText().isEmpty() || comboBox.getValue().isEmpty()) {
+        if (id.getText().isEmpty() || nombre.getText().isEmpty() || lugar.getText().isEmpty() || precio.getText().isEmpty() || fecha.getValue().toString().isEmpty()) {
             alertaErrorAddActividad();
         } else {
-            Actividad Actividad = new Actividad(id.getText(), nombre.getText(), Integer.parseInt(edad.getText()), comboBox.getValue());
+            Actividad Actividad = new Actividad(Integer.parseInt(id.getText()), nombre.getText(), lugar.getText(), Double.parseDouble(precio.getText()), fecha.getValue());
             if (viewModel.getServicioActividades().addActividad(Actividad)) {
                 tablaActividades.getItems().add(Actividad);
                 alertaOKAddActividad();
@@ -178,10 +175,10 @@ public class SegundaPantallaClientesController implements Initializable {
 
     @FXML
     private void updateActividad() {
-        if (nombre.getText() == null || edad.getText() == null || id.getText() == null || comboBox.getValue() == null) {
+        if (nombre.getText() == null || lugar.getText() == null || id.getText() == null || precio.getText() == null || fecha.getText() == null) {
             alertaErrorUpdateActividad();
         } else {
-            Actividad Actividad1 = new Actividad(id.getText(), nombre.getText(), Integer.parseInt(edad.getText()), comboBox.getValue());
+            Actividad Actividad1 = new Actividad(Integer.parseInt(id.getText()), nombre.getText(), lugar.getText(), Double.parseDouble(precio.getText()), fecha.getValue());
             Actividad Actividad2 = tablaActividades.getSelectionModel().getSelectedItem();
             if (viewModel.getServicioActividades().updateActividad(Actividad1, Actividad2)) {
                 tablaActividades.getItems().remove(Actividad2);
@@ -198,8 +195,9 @@ public class SegundaPantallaClientesController implements Initializable {
     private void limpiarCampos() {
         id.clear();
         nombre.clear();
-        edad.clear();
-        comboBox.clear();
+        lugar.clear();
+        precio.clear();
+        fecha.clear();
     }
 
     @FXML

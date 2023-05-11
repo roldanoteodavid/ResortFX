@@ -2,8 +2,6 @@ package ui;
 
 import dao.DaoActividades;
 import domain.modelo.Actividad;
-import domain.modelo.Animal;
-import servicios.ServicioAnimales;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import servicios.ServicioActividades;

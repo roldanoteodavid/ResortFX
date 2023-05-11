@@ -10,11 +10,13 @@
             xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1"
             fx:controller="ui.SegundaPantallaClientesController">
     <children>
-        <MFXButton fx:id="botonDelete" layoutX="281.0" layoutY="90.0" mnemonicParsing="false" onAction="#deleteActividad"
+        <MFXButton fx:id="botonDelete" layoutX="281.0" layoutY="90.0" mnemonicParsing="false"
+                   onAction="#deleteActividad"
                    text="Eliminar"/>
         <MFXButton fx:id="botonAdd" layoutX="44.0" layoutY="90.0" mnemonicParsing="false" onAction="#addActividad"
                    text="Añadir"/>
-        <MFXButton fx:id="botonUpdate" layoutX="148.0" layoutY="90.0" mnemonicParsing="false" onAction="#updateActividad"
+        <MFXButton fx:id="botonUpdate" layoutX="148.0" layoutY="90.0" mnemonicParsing="false"
+                   onAction="#updateActividad"
                    text="Actualizar"/>
         <MFXTextField fx:id="id" alignment="CENTER" layoutX="521.0" layoutY="103.0" prefHeight="25.0" prefWidth="200.0"
                       promptText="id"/>
@@ -33,8 +35,10 @@
                 <TableColumn fx:id="columna5" prefWidth="146" text="Fecha"/>
             </columns>
         </TableView>
-        <MFXComboBox fx:id="comboBox" alignment="CENTER" layoutX="521.0" layoutY="337.0" prefHeight="60.0"
-                     prefWidth="200.0" promptText="Fecha"/>
+        <MFXDatePicker fx:id="fecha" alignment="CENTER" layoutX="521.0" layoutY="337.0" prefHeight="60.0"
+                       prefWidth="200.0" promptText="Fecha"/>
+        <!--<MFXComboBox fx:id="comboBox" alignment="CENTER" layoutX="521.0" layoutY="337.0" prefHeight="60.0"
+                     prefWidth="200.0" promptText="Fecha"/>-->
         <MFXToggleButton fx:id="toggleidioma" layoutX="721.0" layoutY="440.0" length="40.0" onAction="#cambioIdioma"
                          prefHeight="49.0" prefWidth="7.0" text="Español"/>
         <ImageView fitHeight="26.0" fitWidth="28.0" layoutX="426.0" layoutY="90.0" onMouseClicked="#ayuda"

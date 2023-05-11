@@ -38,7 +38,7 @@ public class ServicioActividades {
         }
     }
 
-    public boolean deleteAnimal(Actividad a) {
+    public boolean deleteActividad(Actividad a) {
         if (daoActividades.getActividad(a)) {
             return daoActividades.eliminarActividad(a);
         } else {

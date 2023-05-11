@@ -4,7 +4,6 @@ import com.google.gson.*;
 import com.google.gson.reflect.TypeToken;
 import config.Configuracion;
 import domain.modelo.Actividad;
-import domain.modelo.Animal;
 import lombok.extern.log4j.Log4j2;
 
 import java.io.*;
@@ -16,7 +15,7 @@ import java.util.List;
 
 public class Database {
 
-    public List<Animal> loadAnimales() {
+    /*public List<Animal> loadAnimales() {
         Gson gson = new Gson();
         Type userListType = new TypeToken<ArrayList<Animal>>() {}.getType();
 
@@ -40,7 +39,7 @@ public class Database {
             return false;
         }
         return true;
-    }
+    }*/
 
     public List<Actividad> loadActividades() {
         Gson gson = new Gson();
