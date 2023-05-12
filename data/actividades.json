@@ -10,14 +10,14 @@
     "id": 2,
     "nombre": "Clase de yoga en la playa",
     "lugar": "Playa",
-    "precio": 10.50,
+    "precio": 10.5,
     "fecha": "2023-05-12"
   },
   {
     "id": 3,
     "nombre": "Rutina de ejercicios en el gimnasio",
     "lugar": "Gimnasio",
-    "precio": 15.00,
+    "precio": 15.0,
     "fecha": "2023-05-14"
   },
   {
@@ -31,35 +31,35 @@
     "id": 5,
     "nombre": "Paseo en kayak por la playa",
     "lugar": "Playa",
-    "precio": 35.00,
+    "precio": 35.0,
     "fecha": "2023-05-17"
   },
   {
     "id": 6,
     "nombre": "Sesión de masajes en la piscina",
     "lugar": "Piscina",
-    "precio": 50.00,
+    "precio": 50.0,
     "fecha": "2023-05-18"
   },
   {
     "id": 7,
     "nombre": "Reto de carreras en el gimnasio",
     "lugar": "Gimnasio",
-    "precio": 20.00,
+    "precio": 20.0,
     "fecha": "2023-05-16"
   },
   {
     "id": 8,
     "nombre": "Escalada en rocodromo con instructor",
     "lugar": "Rocodromo",
-    "precio": 45.00,
+    "precio": 45.0,
     "fecha": "2023-05-19"
   },
   {
     "id": 9,
     "nombre": "Meditación al amanecer en la playa",
     "lugar": "Playa",
-    "precio": 5.00,
+    "precio": 5.0,
     "fecha": "2023-05-20"
   },
   {
@@ -67,6 +67,6 @@
     "nombre": "Hidrogimnasia en la piscina",
     "lugar": "Piscina",
     "precio": 7.99,
-    "fecha": "2023-05-21"
+    "fecha": "2023-05-19"
   }
 ]
