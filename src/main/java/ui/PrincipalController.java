@@ -3,9 +3,11 @@ package ui;
 //https://medium.com/@devtony101/tutorial-javafx-cbe534aa3a98
 
 
+import io.github.palexdev.materialfx.controls.MFXPasswordField;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Alert;
 import javafx.scene.control.MenuBar;
 import javafx.scene.control.MenuItem;
 import javafx.scene.layout.BorderPane;
@@ -29,6 +31,9 @@ public class PrincipalController implements Initializable {
     public MenuItem pantallaSegunda;
     @FXML
     public MenuItem pantallaTercera;
+    @FXML
+    public MFXPasswordField pwdField;
+    private static final String pass = "2223";
 
 
     @FXML
@@ -64,6 +69,21 @@ public class PrincipalController implements Initializable {
     }
 
     public void Aceptar(ActionEvent actionEvent) {
-        menuPrincipal.setVisible(true);
+
+        if (pwdField.getText().equals(pass)) {
+            menuPrincipal.setVisible(true);
+        }else {
+            pwdField.setText("");
+            alertaContrasenyaErronea();
+        }
+        //menuPrincipal.setVisible(true);
+    }
+    public void alertaContrasenyaErronea(){
+        Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+        alert.setTitle("Contraseña incorrecta");
+        alert.setHeaderText("Contraseña incorrecta");
+        alert.setContentText("Vuelva a introducir la contraseña");
+        alert.show();
+
     }
 }

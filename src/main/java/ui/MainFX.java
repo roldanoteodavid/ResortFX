@@ -21,7 +21,7 @@ public class MainFX extends Application {
         ResourceBundle rb = ResourceBundle.getBundle("textosFX", Locale.getDefault());
         FXMLLoader loaderMenu = new FXMLLoader(getClass().getResource("/fxml/Screen1.fxml"),rb);
         BorderPane root = loaderMenu.load();
-        Scene scene = new Scene(root);
+        Scene scene = new Scene(root, 1000, 640);
         primaryStage.setTitle(rb.getString("title"));
         primaryStage.setScene(scene);
         primaryStage.show();

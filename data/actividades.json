@@ -28,13 +28,6 @@
     "fecha": "2023-05-13"
   },
   {
-    "id": 5,
-    "nombre": "Paseo en kayak por la playa",
-    "lugar": "Playa",
-    "precio": 35.0,
-    "fecha": "2023-05-17"
-  },
-  {
     "id": 6,
     "nombre": "Sesión de masajes en la piscina",
     "lugar": "Piscina",
@@ -68,5 +61,19 @@
     "lugar": "Piscina",
     "precio": 7.99,
     "fecha": "2023-05-19"
+  },
+  {
+    "id": 11,
+    "nombre": "Rapel",
+    "lugar": "Rocodromo",
+    "precio": 20.0,
+    "fecha": "2023-05-31"
+  },
+  {
+    "id": 5,
+    "nombre": "Paseo en kayak por la playa",
+    "lugar": "Playa",
+    "precio": 40.0,
+    "fecha": "2023-05-26"
   }
 ]

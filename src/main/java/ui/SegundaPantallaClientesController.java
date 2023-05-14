@@ -205,7 +205,7 @@ public class SegundaPantallaClientesController implements Initializable {
         Alert a = new Alert(Alert.AlertType.INFORMATION);
         a.setTitle("Ayuda");
         a.setHeaderText("Ayuda");
-        a.setContentText("Selecciona el Actividad a actualizar en la tabla e introduce los nuevos datos");
+        a.setContentText("Selecciona la actividad a actualizar en la tabla e introduce los nuevos datos");
         a.show();
     }
 
@@ -213,24 +213,23 @@ public class SegundaPantallaClientesController implements Initializable {
     private void alertaErrorAddActividad() {
         Alert alert = new Alert(Alert.AlertType.ERROR);
         alert.setTitle("Error");
-        alert.setHeaderText("Error al añadir el Actividad");
-        alert.setContentText("No se ha podido añadir el Actividad");
+        alert.setHeaderText("Error al añadir la actividad");
+        alert.setContentText("No se ha podido añadir la actividad");
         alert.show();
     }
 
     private void alertaOKAddActividad() {
         Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
-        alert.setTitle("Actividad añadido correctamente");
-        alert.setHeaderText("Actividad añadido correctamente");
+        alert.setTitle("Actividad añadida correctamente");
+        alert.setHeaderText("Actividad añadida correctamente");
         alert.setContentText("Se ha añadido correctamente");
         alert.show();
-
     }
 
     private void alertaOKUpdateActividad() {
         Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
-        alert.setTitle("Actividad actualizado con éxito");
-        alert.setHeaderText("Actividad actualizado con éxito");
+        alert.setTitle("Actividad actualizada con éxito");
+        alert.setHeaderText("Actividad actualizada con éxito");
         alert.setContentText("Se ha actualizado correctamente");
         alert.show();
     }
@@ -239,20 +238,20 @@ public class SegundaPantallaClientesController implements Initializable {
     private void alertaErrorUpdateActividad() {
         Alert alert = new Alert(Alert.AlertType.ERROR);
         alert.setTitle("Error");
-        alert.setHeaderText("Error al actualizar Actividad");
-        alert.setContentText("Problemas al actualizar el Actividad");
+        alert.setHeaderText("Error al actualizar actividad");
+        alert.setContentText("Problemas al actualizar la actividad");
         alert.show();
     }
 
-    private void alertaConfirmationDeleteActividad(Actividad Actividad) {
+    private void alertaConfirmationDeleteActividad(Actividad actividad) {
         Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
         alert.setTitle("Diálogo de Confirmación");
         alert.setHeaderText("Diálogo confirmación");
-        alert.setContentText("Confirma el borrado de " + Actividad + "?");
+        alert.setContentText("Confirma el borrado de " + actividad + "?");
 
         Optional<ButtonType> result = alert.showAndWait();
         if (result.isPresent() && result.get() == ButtonType.OK) {
-            tablaActividades.getItems().remove(Actividad);
+            tablaActividades.getItems().remove(actividad);
             Alert alert2 = new Alert(Alert.AlertType.CONFIRMATION);
             alert2.setTitle("Actividad eliminada con éxito");
             alert2.setHeaderText("Actividad eliminada con éxito");

@@ -7,17 +7,17 @@
 
 <BorderPane fx:id="borderPane" prefHeight="800.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ui.PrincipalController">
     <center>
-        <StackPane prefHeight="150.0" prefWidth="200.0">
+        <StackPane prefHeight="640.0" prefWidth="1000.0">
             <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
                 <children>
-                    <MFXPasswordField layoutX="274.0" layoutY="71.0" promptText="Introduce password" />
-                    <MFXButton layoutX="289.0" layoutY="157.0" mnemonicParsing="false" text="Aceptar" onAction="#Aceptar" />
-                    <ImageView fitHeight="161.0" fitWidth="187.0" layoutX="263.0" layoutY="237.0" pickOnBounds="true" preserveRatio="true">
+                    <MFXPasswordField fx:id="pwdField" layoutX="416.0" layoutY="75.0" prefHeight="50.0" prefWidth="168.0" promptText="Introduce password" />
+                    <MFXButton layoutX="470.0" layoutY="137.0" mnemonicParsing="false" onAction="#Aceptar" text="Aceptar" />
+                    <ImageView fitHeight="297.0" fitWidth="414.0" layoutX="294.0" layoutY="207.0" pickOnBounds="true" preserveRatio="true">
                         <image>
-                            <Image url="@../images/Logo_Quevedo.jpg" />
+                            <Image url="@../images/logo_resort.png" />
                         </image>
                     </ImageView>
-                    <StackPane prefHeight="150.0" prefWidth="200.0" />
+                    <!--<StackPane prefHeight="150.0" prefWidth="200.0" />-->
                 </children>
             </AnchorPane>
         </StackPane>
@@ -25,8 +25,8 @@
     <top>
         <MenuBar fx:id="menuPrincipal">
             <Menu mnemonicParsing="false" text="OpcionesMenu">
-                <MenuItem fx:id="pantallaPrimera" mnemonicParsing="false" onAction="#menuClick" text="PantallaPrincipal"/>
-                <MenuItem fx:id="pantallaSegunda" mnemonicParsing="false" onAction="#menuClick" text="Actividades"/>
+                <MenuItem fx:id="pantallaPrimera" mnemonicParsing="false" onAction="#menuClick" text="PantallaPrincipal" />
+                <MenuItem fx:id="pantallaSegunda" mnemonicParsing="false" onAction="#menuClick" text="Actividades" />
                 <MenuItem fx:id="pantallaTercera" mnemonicParsing="false" onAction="#menuClick" text="Salir" />
             </Menu>
         </MenuBar>
